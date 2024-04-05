@@ -7,13 +7,14 @@
  *
  * @author lily
  */
+
+import java.util.Random;
+
 public class Driver {
     public static void main(String args[ ])
     {
 	Random rand = new Random();
 	int min = 1;
-	int min = 4
 	int randomNumber = rand.nextInt(max - min) + min;
-	return randomNumber;
     }
 }
