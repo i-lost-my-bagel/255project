@@ -21,6 +21,9 @@ public class Driver {
         
         Scanner scanner = new Scanner(System.in); 
         System.out.print("Enter name: ");
-        Player.setName(scanner.nextLine());
+        
+        Player testplayer = new Player(scanner.nextLine(), true, 0, 100, 100); 
+        
+
     }
 }

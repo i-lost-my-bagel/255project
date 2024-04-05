@@ -1,11 +1,11 @@
 public class Guardian extends Player
 {
-  public Guardian(String name, Boolean isAlive, int daysSurvived, int mana){
-		super(name, isAlive, daysSurvived, mana);
+  public Guardian(String name, Boolean isAlive, int daysSurvived, int mana, int health){
+		super(name, isAlive, daysSurvived, mana, health);
 	}
-	public double getHealth()
-	{
-		return super.getHealth() + 100;
-	}
+	//private double getHealth()
+	//{
+	//	return super.getHealth() + 100;
+	//}
 	
 }
