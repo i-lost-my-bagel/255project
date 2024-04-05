@@ -1,59 +1,75 @@
-// Player Class
-Public Player (String name, Boolean isAlive, int daysSurvived, int Health, int Mana)
-{
-//instances
-private String name;
-Private boolean isAlive;
-Private int daysSurvived = 0;
-Private int health = 200;
-Private int mana = 100;
-}
+public class Player {
+    // Member variables
+    private String name;
+    private boolean isAlive;
+    private int daysSurvived;
+    private int health;
+    private int mana;
 
-//getters and setters - Names will be the names of the classes
-Public String getName(){
-	Return name;
-}
-Public void setName(String name){
-	this.name = name;
-}
+    // Constructor
+    public Player(String name, boolean isAlive, int daysSurvived, int health, int mana) {
+        this.name = name;
+        this.isAlive = isAlive;
+        this.daysSurvived = daysSurvived;
+        this.health = health;
+        this.mana = mana;
+    }
 
-Public boolean isAlive(){
-Return this.active;
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean isAlive) {
+        this.isAlive = isAlive;
+    }
+
+    public int getDaysSurvived() {
+        return daysSurvived;
+    }
+
+    public void setDaysSurvived(int daysSurvived) {
+        this.daysSurvived = daysSurvived;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    // Methods
+    public void doDamage() {
+        health -= 50;
+    }
+
+    public void eatFood() {
+        health += 20;
+    }
+
+    public void drinkWater() {
+        health += 10;
+    }
+
+    public void runAway() {
+        health -= 5;
+    }
 }
-
-Public void set isAlive(Boolean isAlive){
-this.isAlive = isAlive;
-}
-
-public int doDamage(){
-	health = health - 50;
-}
-}
-
-public int eatFood(){
-	health = health + 20;
-}
-public int drinkWater(){
-	health = health + 10;
-}
-
-
-Public int runAway(){
-	health = health - 5;
-
-}
-
-}
-
--------------------------------------------
-Public class Berserker extends Player{
-Public Berserker(String name, Boolean isAlive, int daysSurvived, int mana){
-		super(name, isAlive, daysSurvived, mana);
-	}
-	Public double getHealth()
-	{
-		Return super.getHealth() + 50;
-	}
-
-}
-
