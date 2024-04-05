@@ -12,6 +12,24 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Driver {
+    public static void printStats(Guardian guardian, Berserker berserker, Mage mage)
+    {
+        System.out.println("Guardian Stats\n");
+        System.out.println("Name: " + guardian.getName());
+        System.out.println("Health: " + guardian.getHealth());
+        System.out.println("Mana: " + guardian.getMana());
+        
+        System.out.println("Berserker Stats\n");
+        System.out.println("Name: " + berserker.getName());
+        System.out.println("Health: " + berserker.getHealth());
+        System.out.println("Mana: " + berserker.getMana());
+        
+        System.out.println("Mage Stats\n");
+        System.out.println("Name: " + mage.getName());
+        System.out.println("Health: " + mage.getHealth());
+        System.out.println("Mana: " + mage.getMana());
+    }
+    
     public static void main(String args[ ])
     {
 	Random rand = new Random();
@@ -26,15 +44,10 @@ public class Driver {
         System.out.print("Enter Berserker Name: ");
         Berserker berserker = new Berserker(scanner.nextLine(), true, 0, 100, 100); 
         
-        System.out.println("Guardian Stats\n");
-        System.out.println("Name: " + guardian.getName());
-        System.out.println("Health: " + guardian.getHealth());
-        System.out.println("Mana: " + guardian.getMana());
+        System.out.print("Enter Mage Name: ");
+        Mage mage = new Mage(scanner.nextLine(), true, 0, 100, 100); 
         
-        System.out.println("Berserker Stats\n");
-        System.out.println("Name: " + berserker.getName());
-        System.out.println("Health: " + berserker.getHealth());
-        System.out.println("Mana: " + berserker.getMana());
+        printStats(guardian, berserker, mage);
 
     }
 }
