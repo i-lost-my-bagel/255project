@@ -24,6 +24,9 @@ public class Driver {
         
         Player testplayer = new Player(scanner.nextLine(), true, 0, 100, 100); 
         
+        System.out.println("Name: " + testplayer.getName());
+        System.out.println("Health: " + testplayer.getHealth());
+        System.out.println("Mana: " + testplayer.getMana());
 
     }
 }
