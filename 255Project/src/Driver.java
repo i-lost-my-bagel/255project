@@ -22,7 +22,7 @@ public class Driver {
         Scanner scanner = new Scanner(System.in); 
         System.out.print("Enter name: ");
         
-        Player testplayer = new Player(scanner.nextLine(), true, 0, 100, 100); 
+        Guardian testplayer = new Guardian(scanner.nextLine(), true, 0, 100, 200); 
         
         System.out.println("Name: " + testplayer.getName());
         System.out.println("Health: " + testplayer.getHealth());
