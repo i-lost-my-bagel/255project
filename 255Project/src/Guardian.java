@@ -5,7 +5,7 @@ public class Guardian extends Player
 	}
 	public double getHealth()
 	{
-		return super.getHealth() + 100
+		return super.getHealth() + 100;
 	}
 	
 }
