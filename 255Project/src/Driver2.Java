@@ -1,25 +1,24 @@
+//setting initial values
 Import java.util.Random;
-
-public class Driver {
-
-// setting initial values
-    int round = 0;
+int day = 0;
+int round = 0;
 
 //while loop main state
+//if at least one players health > 0
 
 
 //while loop fight state
-//if boss health > 0, at least one players health > 0, begin round, add 1 to round counter
-    while (boss.health > 0) {
-        List playersHealth = new ArrayList;
+//if boss health > 0, at least one players health > 0, add 1 to round counter
+while (boss.health > 0) {
+	List playersHealth = new ArrayList;
 	round ++ 1;
-    }
+//player goes first
+//if attack
 
+//if heal
 
-
-
-//RNG selects player, player cannot be chosen more than once during 1 round
-
+//boss goes
+//RNG selects player num, player cannot be chosen more than once during 1 round
 public class selectPlayer {
 public static void main(String args[ ])
 {
@@ -32,3 +31,4 @@ public static void main(String args[ ])
 }
 
 }
+
