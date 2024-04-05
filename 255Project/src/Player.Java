@@ -44,18 +44,7 @@ Public int runAway(){
 }
 
 }
---------------------------------------
 
-Public class Guardian extends Player{
-Public Guardian(String name, Boolean isAlive, int daysSurvived, int mana){
-		super(name, isAlive, daysSurvived, mana);
-	}
-	Public double getHealth()
-	{
-		Return super.getHealth() + 100
-	}
-	
-}
 -------------------------------------------
 Public class Berserker extends Player{
 Public Berserker(String name, Boolean isAlive, int daysSurvived, int mana){
