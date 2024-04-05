@@ -9,12 +9,18 @@
  */
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Driver {
     public static void main(String args[ ])
     {
 	Random rand = new Random();
 	int min = 1;
+        int max = 4;
 	int randomNumber = rand.nextInt(max - min) + min;
+        
+        Scanner scanner = new Scanner(System.in); 
+        System.out.print("Enter name: ");
+        Player.setName(scanner.nextLine());
     }
 }
