@@ -11,8 +11,8 @@ public class Player {
         this.name = name;
         this.isAlive = isAlive;
         this.daysSurvived = daysSurvived;
-        this.health = health;
-        this.mana = mana;
+        this.health = 200;
+        this.mana = 100;
     }
 
     // Getters and setters
