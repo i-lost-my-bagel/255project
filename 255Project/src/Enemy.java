@@ -6,11 +6,13 @@ public class Enemy {
     private Boolean isAlive;
     private int health;
     private String name;
+    private int mana;
     
-    public Enemy(Boolean isAlive, int health, String name){
+    public Enemy(String name, Boolean isAlive, int health, int mana){
         this.name = name;
         this.health = health;
         this.isAlive = isAlive;
+        this.mana = mana;
         
     }
 
@@ -55,7 +57,17 @@ public class Enemy {
     public void setName(String name) {
         this.name = name;
     }
+   
     
+    public int getMana(){
+        return mana;
+    }
+    
+    
+    public void setMana(int mana){
+        this.mana = mana;
+    }
+   
      // Methods
     public void doDamage() {
         health -= 50;
