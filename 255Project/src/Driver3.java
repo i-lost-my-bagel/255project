@@ -1,5 +1,4 @@
 /**
-/**
  *
  * @author shrutiatitkar
  */
@@ -31,23 +30,25 @@ public class Driver {
         System.out.println("Damage Strength: " + guardian.getDoDamage());
         System.out.println("Mana: " + guardian.getMana());
 
-        System.out.println("Berserker Stats");
+        System.out.println("\nBerserker Stats");
         System.out.println("Name: " + berserker.getName());
         System.out.println("Health: " + berserker.getHealth());
         System.out.println("Damage Strength: " + berserker.getDoDamage());
         System.out.println("Mana: " + berserker.getMana());
 
-        System.out.println("Healer Stats");
+        System.out.println("\nHealer Stats");
         System.out.println("Name: " + healer.getName());
         System.out.println("Health: " + healer.getHealth());
         System.out.println("Damage Strength: " + healer.getDoDamage());
         System.out.println("Mana: " + healer.getMana());
 
-        System.out.println("Boss Stats");
+        System.out.println("\nBoss Stats");
         System.out.println(boss.getName());
         System.out.println("Health: " + boss.getHealth());
         System.out.println("Mana: " + boss.getMana());
         
+        Boolean play = true;
+        while (play){
         for (int day = 1; day <=3; day++){
             for(int moves = 0; moves <=2; moves++ ){
                Random rand = new Random();
@@ -55,7 +56,7 @@ public class Driver {
                int max = 4;
                int randomNumber = rand.nextInt(max - min) + min;
                
-               System.out.println("DAY" + day);
+               System.out.println("\nDAY" + day);
                if(randomNumber == 1){
                    System.out.println("Guardian is Being Played");
                }
@@ -68,6 +69,7 @@ public class Driver {
                if(randomNumber == 4){
                 System.out.println("Mage is Being Played");
                }
+              
                
                System.out.println("Choose Player Action");
                System.out.println("1. Do Damage");
@@ -127,10 +129,12 @@ public class Driver {
                         System. exit(0);
                         
                    default:
-                       System.out.println("Invalid Action!");
+                       System.out.println("Invalid Action! Game will show end of Day 1 statistics and begin again.");
+                       day = 1;
+                       moves = 0;
+                       break;
                        
-                }
-               
+               }
                if(boss.getHealth() < 0){
                    System.out.println("You win!");
                    day = 1;
@@ -142,28 +146,24 @@ public class Driver {
                System.out.println("Name: " + guardian.getName());
                System.out.println("Health: " + guardian.getHealth());
                System.out.println("Damage Strength: " + guardian.getDoDamage());
-               System.out.println("Mana: " + guardian.getMana());
+               System.out.println("Mana:" + guardian.getMana());
 
-               System.out.println("Berserker Stats");
+               System.out.println("\nBerserker Stats");
                System.out.println("Name: " + berserker.getName());
                System.out.println("Health: " + berserker.getHealth());
                System.out.println("Damage Strength: " + berserker.getDoDamage());
                System.out.println("Mana: " + berserker.getMana());
 
-               System.out.println("Healer Stats");
+               System.out.println("\nHealer Stats");
                System.out.println("Name: " + healer.getName());
                System.out.println("Health: " + healer.getHealth());
                System.out.println("Damage Strength: " + healer.getDoDamage());
                System.out.println("Mana: " + healer.getMana());
 
-               System.out.println("Boss Stats");
-               System.out.println(boss.getName());
+               System.out.println("\nBoss Stats");
                System.out.println("Health: " + boss.getHealth());
                System.out.println("Mana: " + boss.getMana());
-               
-               if(boss.getHealth() < 0){
-                   System.out.println("You win!");
-               }
+            
               
 
               
@@ -173,5 +173,6 @@ public class Driver {
              
         }
        
+    }
     }
 }
