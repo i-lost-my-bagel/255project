@@ -65,7 +65,7 @@ public class Player {
 
     // Methods
     public void doDamage() {
-        health -= 50;
+        health -= 0;
     }
 
     public void eatFood() {
