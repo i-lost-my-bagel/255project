@@ -9,7 +9,7 @@
  */
 public class Berserker extends Player
 {
-  public Berserker(String name, Boolean isAlive, int daysSurvived, int mana, int health){
-		super(name, isAlive, daysSurvived, mana, health);
-	}	
+  public Berserker(String name, boolean isAlive, int daysSurvived, int health, int mana, int damage, boolean isShielded){
+		super(name, isAlive, daysSurvived, health, mana, damage, isShielded);
+  }
 }
