@@ -45,6 +45,7 @@ public class UI extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        currentPlayerLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -137,6 +138,8 @@ public class UI extends javax.swing.JFrame {
 
         jButton5.setText("jButton5");
 
+        currentPlayerLabel.setText("jLabel1");
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -163,21 +166,26 @@ public class UI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(currentPlayerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(15, 15, 15)
+                .addComponent(currentPlayerLabel)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
@@ -243,18 +251,19 @@ public class UI extends javax.swing.JFrame {
                 new UI().setVisible(true);
             }
         });
-        
-        
     
     // Create initial characters with placeholder names
-    Guardian guardian = new Guardian("Guardian", true, 0, 100, 200, 0, false);
+    }
+    
+    private void mainLoop() {
+        Guardian guardian = new Guardian("Guardian", true, 0, 100, 200, 0, false);
     Berserker berserker = new Berserker("Berserker", true, 0, 100, 100, 0, false);
     Healer healer = new Healer("Healer", true, 0, 100, 100, 0, false);
     Mage mage = new Mage("Mage", true, 0, 100, 100, 0, false);
     
     Boss boss = new Boss("Boss", true, 500, 1);
     
-    //inits
+        //inits
         Boolean play = true;
         Boolean stun = false;
         int Stuns = 0;
@@ -282,15 +291,19 @@ public class UI extends javax.swing.JFrame {
                 System.out.println("\nDAY" + day); //print day num + who is being played
                 if(randomNumber == 1){
                     System.out.println("Guardian is Being Played");
+                    currentPlayerLabel.setText("Guardian is Being Played");
                 }
                 if(randomNumber == 2){
                     System.out.println("Berserker is Being Played");
+                    currentPlayerLabel.setText("Berserker is Being Played");
                 }
                 if(randomNumber == 3){
                     System.out.println("Healer is Being Played");
+                    currentPlayerLabel.setText("Healer is Being Played");
                 }
                 if(randomNumber == 4){
                     System.out.println("Mage is Being Played");
+                    currentPlayerLabel.setText(" is Being Played");
                 }
               
                 //choose action
@@ -472,7 +485,6 @@ public class UI extends javax.swing.JFrame {
         }
        
     }
-    
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -486,6 +498,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JTextField HealerNameField;
     private javax.swing.JLabel MageLabel;
     private javax.swing.JTextField MageNameField;
+    public static javax.swing.JLabel currentPlayerLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
