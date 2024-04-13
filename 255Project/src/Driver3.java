@@ -4,7 +4,7 @@ package javaapplication14;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Driver4 {
+public class Driver3 {
 
     // prints stats at the end of each day
     public static void printEndOfDayStats(Guardian guardian, Berserker berserker, Healer healer, Mage mage, Boss boss, int shieldedPlayers, int healedPlayers, int stuns) {
