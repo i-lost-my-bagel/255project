@@ -1,15 +1,12 @@
-/**
- *
- * @author shrutiatitkar
- */
+
 package javaapplication14;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Driver3 {
+public class Driver4 {
 
-    // prints stats at each end of day
+    // prints stats at the end of each day
     public static void printEndOfDayStats(Guardian guardian, Berserker berserker, Healer healer, Mage mage, Boss boss, int shieldedPlayers, int healedPlayers, int stuns) {
         System.out.println("\nEnd of Day Statistics:");
 
@@ -47,7 +44,7 @@ public class Driver3 {
     }
 
     public static void main(String args[]) {
-        // Makes player objects; sets important variables defined in subclasses
+        // Player enter names, create new players
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Guardian Name: ");
         Guardian guardian = new Guardian(scanner.nextLine(), true, 0, 100, 200, 0, false);
@@ -70,10 +67,10 @@ public class Driver3 {
         int stuns = 0;
         int healedPlayers = 0;
         int shieldedPlayers = 0;
+        int day = 1;
 
-        int day = 1; // Start from day 1
-
-        while (day <= 3) { // Continue until day reaches 3
+        while (boss.getHealth() > 0) {
+            // Days are being played until boss health is less than 0. game ends after the day is over.
             switch (day) { // Boss' health increase each day
                 case 1:
                     break;
@@ -84,6 +81,8 @@ public class Driver3 {
                     boss.setHealth(boss.getHealth() + 100);
                     break;
             }
+
+            //3 moves in a day
             for (int moves = 0; moves <= 2; moves++) { // For each move
                 Random rand = new Random();
                 int min = 1;
@@ -106,7 +105,7 @@ public class Driver3 {
                         break;
                 }
 
-                // Choose action - switch case refers to each action
+                // Choose action -> each action is associated with a switch case
                 System.out.println("Choose Player Action");
                 System.out.println("1. Do Damage");
                 System.out.println("2. Special Ability");
@@ -119,6 +118,7 @@ public class Driver3 {
 
                 switch (Integer.parseInt(askPlayer)) {
                     case 1: // Do damage
+                        //general damage variable, but gets modified in every case depending on the player
                         int damageAmount = 0;
                         switch (randomNumber) {
                             case 1:
@@ -138,11 +138,12 @@ public class Driver3 {
                                 mage.setDamage(mage.getDamage() + damageAmount);
                                 break;
                         }
+                        //setting boss's health according to the damageAmt of each player
                         boss.setHealth(boss.getHealth() - damageAmount);
                         break;
-                    case 2: // Special ability
+                    case 2: // Special ability -> if player has mana that is full, then they are allowed to use special ability
                         switch (randomNumber) {
-                            case 1: // Guardian
+                            case 1: // Guardian can shield a player
                                 if (guardian.getMana() == 100) {
                                     System.out.println("Choose player to shield for 1 turn: ");
                                     int playerChoice = Integer.parseInt(scan.nextLine());
@@ -168,22 +169,22 @@ public class Driver3 {
                                             break;
                                     }
                                     shieldedPlayers++;
+                                    //after using special ability it is set to 0
                                     guardian.setMana(0);
                                 } else {
                                     System.out.println("Not enough mana!");
                                 }
                                 break;
-                             case 2: //Beserker
-                                if (berserker.getMana()==100){
-                                boss.setHealth(boss.getHealth() - 100);
-                                berserker.setDamage(berserker.getDamage()+100);
-                                berserker.setMana(0);
-                                }
-                                else {
+                            case 2: //Beserker can damage boss by 100
+                                if (berserker.getMana() == 100) {
+                                    boss.setHealth(boss.getHealth() - 100);
+                                    berserker.setDamage(berserker.getDamage() + 100);
+                                    berserker.setMana(0);
+                                } else {
                                     System.out.println("Not enough mana!");
                                 }
                                 break;
-                            case 3: // Healer
+                            case 3: // Healer can heal any player that is chosen -> uses switch cases and healer only heals by 15 
                                 if (healer.getMana() == 100) {
                                     System.out.println("Choose player to heal: ");
                                     System.out.println("1. Guardian");
@@ -211,23 +212,23 @@ public class Driver3 {
                                             System.out.println("Invalid Player Selection!");
                                             break;
                                     }
+                                    //adds to number of players healed
                                     healedPlayers++;
                                     healer.setMana(0);
                                 } else {
                                     System.out.println("Not enough mana!");
                                 }
                                 break;
-                            case 4: //Mage
-                                if (mage.getMana()==100){
+                            case 4: //Mage stuns boss's turn
+                                if (mage.getMana() == 100) {
                                     stun = true;
                                     stuns++;
                                     System.out.println("Boss is stunned for 1 turn!");
                                     mage.setMana(0);
-                                }
-                                else {
+                                } else {
                                     System.out.println("Not enough mana!");
                                 }
-                                break;    
+                                break;
                             default:
                                 break;
                         }
@@ -262,7 +263,8 @@ public class Driver3 {
             printEndOfDayStats(guardian, berserker, healer, mage, boss, shieldedPlayers, healedPlayers, stuns);
             day++; // Move to the next day
         } // End of while loop
-            System.out.println("You Win!");
-        }
-       
+        System.out.println("You Win!");
     }
+    
+}
+   
