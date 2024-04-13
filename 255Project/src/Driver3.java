@@ -219,7 +219,7 @@ public class Driver3 {
                                     System.out.println("Not enough mana!");
                                 }
                                 break;
-                            case 4: //Mage stuns boss's turn
+                            case 4: //mage stuns boss's turn
                                 if (mage.getMana() == 100) {
                                     stun = true;
                                     stuns++;
@@ -233,7 +233,7 @@ public class Driver3 {
                                 break;
                         }
                         break;
-                    case 3: // Eat food
+                    case 3: // eat food has increased set variable by 10
                         int foodAmount = 10;
                         switch (randomNumber) {
                             case 1:
@@ -250,7 +250,7 @@ public class Driver3 {
                                 break;
                         }
                         break;
-                    case 4: // Quit game
+                    case 4: // automatically shuts game
                         System.exit(0);
                         break;
                     default:
@@ -258,11 +258,12 @@ public class Driver3 {
                         day = 1;
                         moves = 0;
                         break;
-                } // End of switch
-            } // End of moves
+                } // end switches
+            } // end moves
             printEndOfDayStats(guardian, berserker, healer, mage, boss, shieldedPlayers, healedPlayers, stuns);
-            day++; // Move to the next day
-        } // End of while loop
+            day++; //day counter
+        } // ends while loop
+        //prints after game is over and boss health < 0
         System.out.println("You Win!");
     }
     
