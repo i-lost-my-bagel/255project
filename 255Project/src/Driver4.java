@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Driver {
+public class Driver4 {
     public static void main(String args[ ])
     {
         //player enter names, create new players
@@ -19,7 +19,7 @@ public class Driver {
         Mage mage = new Mage(scanner.nextLine(), true, 0, 100, 100, 0, false);
         
         //create boss
-        Boss boss = new Boss("Boss", true, 500);
+        Boss boss = new Boss("Boss", true, 500, 1);
         
         //inits
         Boolean play = true;
